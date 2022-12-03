@@ -29,213 +29,265 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CBVendedores = new System.Windows.Forms.ComboBox();
+            this.LAdvertencia = new System.Windows.Forms.Label();
+            this.BBuscar = new System.Windows.Forms.Button();
+            this.RBEspecificar = new System.Windows.Forms.RadioButton();
+            this.RBTodo = new System.Windows.Forms.RadioButton();
+            this.DTHasta = new System.Windows.Forms.DateTimePicker();
+            this.DTDesde = new System.Windows.Forms.DateTimePicker();
+            this.TBCliente = new System.Windows.Forms.TextBox();
             this.LFecha = new System.Windows.Forms.Label();
             this.LCategoria = new System.Windows.Forms.Label();
             this.L_Producto = new System.Windows.Forms.Label();
-            this.RBTodo = new System.Windows.Forms.RadioButton();
-            this.RBEspecificar = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.label2 = new System.Windows.Forms.Label();
+            this.DGV_Facturas = new System.Windows.Forms.DataGridView();
+            this.DGV_Detalles = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Facturas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Detalles)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
             // 
+            this.splitContainer1.BackColor = System.Drawing.Color.Silver;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.button3);
-            this.splitContainer1.Panel1.Controls.Add(this.button2);
             this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.Controls.Add(this.CBVendedores);
+            this.splitContainer1.Panel1.Controls.Add(this.LAdvertencia);
+            this.splitContainer1.Panel1.Controls.Add(this.BBuscar);
             this.splitContainer1.Panel1.Controls.Add(this.RBEspecificar);
             this.splitContainer1.Panel1.Controls.Add(this.RBTodo);
-            this.splitContainer1.Panel1.Controls.Add(this.dateTimePicker2);
-            this.splitContainer1.Panel1.Controls.Add(this.dateTimePicker1);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox2);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.DTHasta);
+            this.splitContainer1.Panel1.Controls.Add(this.DTDesde);
+            this.splitContainer1.Panel1.Controls.Add(this.TBCliente);
             this.splitContainer1.Panel1.Controls.Add(this.LFecha);
             this.splitContainer1.Panel1.Controls.Add(this.LCategoria);
             this.splitContainer1.Panel1.Controls.Add(this.L_Producto);
+            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
-            this.splitContainer1.SplitterDistance = 124;
+            this.splitContainer1.SplitterDistance = 133;
             this.splitContainer1.TabIndex = 0;
             // 
-            // dateTimePicker2
+            // button1
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(616, 94);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(102, 20);
-            this.dateTimePicker2.TabIndex = 13;
+            this.button1.Location = new System.Drawing.Point(700, 107);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 23);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "Generar pdf";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dateTimePicker1
+            // label1
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(616, 68);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(102, 20);
-            this.dateTimePicker1.TabIndex = 12;
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 120);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 13);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Facturaciones";
             // 
-            // textBox2
+            // CBVendedores
             // 
-            this.textBox2.Location = new System.Drawing.Point(422, 72);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 11;
+            this.CBVendedores.FormattingEnabled = true;
+            this.CBVendedores.Location = new System.Drawing.Point(388, 69);
+            this.CBVendedores.Name = "CBVendedores";
+            this.CBVendedores.Size = new System.Drawing.Size(121, 21);
+            this.CBVendedores.TabIndex = 32;
+            this.CBVendedores.DropDown += new System.EventHandler(this.CBVendedores_DropDown);
+            this.CBVendedores.Click += new System.EventHandler(this.CBVendedores_Click);
             // 
-            // textBox1
+            // LAdvertencia
             // 
-            this.textBox1.Location = new System.Drawing.Point(197, 71);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 10;
+            this.LAdvertencia.AutoSize = true;
+            this.LAdvertencia.BackColor = System.Drawing.Color.Silver;
+            this.LAdvertencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LAdvertencia.ForeColor = System.Drawing.Color.Red;
+            this.LAdvertencia.Location = new System.Drawing.Point(61, 93);
+            this.LAdvertencia.Name = "LAdvertencia";
+            this.LAdvertencia.Size = new System.Drawing.Size(75, 13);
+            this.LAdvertencia.TabIndex = 31;
+            this.LAdvertencia.Text = "Advertencia";
+            // 
+            // BBuscar
+            // 
+            this.BBuscar.Location = new System.Drawing.Point(723, 57);
+            this.BBuscar.Name = "BBuscar";
+            this.BBuscar.Size = new System.Drawing.Size(58, 23);
+            this.BBuscar.TabIndex = 30;
+            this.BBuscar.Text = "Buscar";
+            this.BBuscar.UseVisualStyleBackColor = true;
+            this.BBuscar.Click += new System.EventHandler(this.BBuscar_Click);
+            // 
+            // RBEspecificar
+            // 
+            this.RBEspecificar.AutoSize = true;
+            this.RBEspecificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RBEspecificar.Location = new System.Drawing.Point(432, 28);
+            this.RBEspecificar.Name = "RBEspecificar";
+            this.RBEspecificar.Size = new System.Drawing.Size(88, 17);
+            this.RBEspecificar.TabIndex = 27;
+            this.RBEspecificar.Text = "Especificar";
+            this.RBEspecificar.UseVisualStyleBackColor = true;
+            this.RBEspecificar.CheckedChanged += new System.EventHandler(this.RBEspecificar_CheckedChanged);
+            // 
+            // RBTodo
+            // 
+            this.RBTodo.AutoSize = true;
+            this.RBTodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RBTodo.Location = new System.Drawing.Point(175, 25);
+            this.RBTodo.Name = "RBTodo";
+            this.RBTodo.Size = new System.Drawing.Size(60, 17);
+            this.RBTodo.TabIndex = 26;
+            this.RBTodo.Text = "Todos";
+            this.RBTodo.UseVisualStyleBackColor = true;
+            this.RBTodo.CheckedChanged += new System.EventHandler(this.RBTodo_CheckedChanged);
+            // 
+            // DTHasta
+            // 
+            this.DTHasta.Checked = false;
+            this.DTHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTHasta.Location = new System.Drawing.Point(615, 86);
+            this.DTHasta.Name = "DTHasta";
+            this.DTHasta.Size = new System.Drawing.Size(102, 20);
+            this.DTHasta.TabIndex = 25;
+            // 
+            // DTDesde
+            // 
+            this.DTDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTDesde.Location = new System.Drawing.Point(615, 60);
+            this.DTDesde.Name = "DTDesde";
+            this.DTDesde.Size = new System.Drawing.Size(102, 20);
+            this.DTDesde.TabIndex = 24;
+            // 
+            // TBCliente
+            // 
+            this.TBCliente.Location = new System.Drawing.Point(175, 68);
+            this.TBCliente.MaxLength = 30;
+            this.TBCliente.Name = "TBCliente";
+            this.TBCliente.Size = new System.Drawing.Size(100, 20);
+            this.TBCliente.TabIndex = 22;
+            this.TBCliente.TextChanged += new System.EventHandler(this.TBProducto_TextChanged);
+            this.TBCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBCliente_KeyPress);
+            this.TBCliente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBProducto_KeyUp);
             // 
             // LFecha
             // 
             this.LFecha.AutoSize = true;
-            this.LFecha.Location = new System.Drawing.Point(554, 78);
+            this.LFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFecha.Location = new System.Drawing.Point(543, 70);
             this.LFecha.Name = "LFecha";
-            this.LFecha.Size = new System.Drawing.Size(56, 13);
-            this.LFecha.TabIndex = 9;
+            this.LFecha.Size = new System.Drawing.Size(66, 13);
+            this.LFecha.TabIndex = 21;
             this.LFecha.Text = "Por fecha:";
             // 
             // LCategoria
             // 
             this.LCategoria.AutoSize = true;
-            this.LCategoria.Location = new System.Drawing.Point(361, 75);
+            this.LCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LCategoria.Location = new System.Drawing.Point(295, 72);
             this.LCategoria.Name = "LCategoria";
-            this.LCategoria.Size = new System.Drawing.Size(55, 13);
-            this.LCategoria.TabIndex = 8;
-            this.LCategoria.Text = "Categoria:";
+            this.LCategoria.Size = new System.Drawing.Size(87, 13);
+            this.LCategoria.TabIndex = 20;
+            this.LCategoria.Text = "Por vendedor:";
             // 
             // L_Producto
             // 
             this.L_Producto.AutoSize = true;
-            this.L_Producto.Location = new System.Drawing.Point(120, 75);
+            this.L_Producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Producto.Location = new System.Drawing.Point(39, 72);
             this.L_Producto.Name = "L_Producto";
-            this.L_Producto.Size = new System.Drawing.Size(71, 13);
-            this.L_Producto.TabIndex = 7;
-            this.L_Producto.Text = "Por producto:";
+            this.L_Producto.Size = new System.Drawing.Size(138, 13);
+            this.L_Producto.TabIndex = 19;
+            this.L_Producto.Text = "Por apellido de cliente:";
+            this.L_Producto.Click += new System.EventHandler(this.L_Producto_Click);
             // 
-            // RBTodo
+            // splitContainer2
             // 
-            this.RBTodo.AutoSize = true;
-            this.RBTodo.Location = new System.Drawing.Point(215, 32);
-            this.RBTodo.Name = "RBTodo";
-            this.RBTodo.Size = new System.Drawing.Size(55, 17);
-            this.RBTodo.TabIndex = 14;
-            this.RBTodo.TabStop = true;
-            this.RBTodo.Text = "Todos";
-            this.RBTodo.UseVisualStyleBackColor = true;
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.IsSplitterFixed = true;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // RBEspecificar
+            // splitContainer2.Panel1
             // 
-            this.RBEspecificar.AutoSize = true;
-            this.RBEspecificar.Location = new System.Drawing.Point(472, 35);
-            this.RBEspecificar.Name = "RBEspecificar";
-            this.RBEspecificar.Size = new System.Drawing.Size(77, 17);
-            this.RBEspecificar.TabIndex = 15;
-            this.RBEspecificar.TabStop = true;
-            this.RBEspecificar.Text = "Especificar";
-            this.RBEspecificar.UseVisualStyleBackColor = true;
+            this.splitContainer2.Panel1.Controls.Add(this.label2);
+            this.splitContainer2.Panel1.Controls.Add(this.DGV_Facturas);
             // 
-            // button1
+            // splitContainer2.Panel2
             // 
-            this.button1.Location = new System.Drawing.Point(294, 69);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(27, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.splitContainer2.Panel2.Controls.Add(this.DGV_Detalles);
+            this.splitContainer2.Size = new System.Drawing.Size(800, 313);
+            this.splitContainer2.SplitterDistance = 170;
+            this.splitContainer2.TabIndex = 0;
             // 
-            // button2
+            // label2
             // 
-            this.button2.Location = new System.Drawing.Point(521, 72);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(27, 23);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(0, 157);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Detalle";
             // 
-            // button3
+            // DGV_Facturas
             // 
-            this.button3.Location = new System.Drawing.Point(724, 65);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(27, 23);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.DGV_Facturas.AllowUserToAddRows = false;
+            this.DGV_Facturas.AllowUserToDeleteRows = false;
+            this.DGV_Facturas.AllowUserToResizeColumns = false;
+            this.DGV_Facturas.AllowUserToResizeRows = false;
+            this.DGV_Facturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGV_Facturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_Facturas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGV_Facturas.Location = new System.Drawing.Point(0, 0);
+            this.DGV_Facturas.Name = "DGV_Facturas";
+            this.DGV_Facturas.ReadOnly = true;
+            this.DGV_Facturas.Size = new System.Drawing.Size(800, 170);
+            this.DGV_Facturas.TabIndex = 0;
+            this.DGV_Facturas.Click += new System.EventHandler(this.DGV_Facturas_Click);
             // 
-            // dataGridView1
+            // DGV_Detalles
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(800, 322);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Código";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Cliente";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Cantidad de productos";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Total";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Estado";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "editar";
-            this.Column6.Name = "Column6";
+            this.DGV_Detalles.AllowUserToAddRows = false;
+            this.DGV_Detalles.AllowUserToDeleteRows = false;
+            this.DGV_Detalles.AllowUserToResizeColumns = false;
+            this.DGV_Detalles.AllowUserToResizeRows = false;
+            this.DGV_Detalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGV_Detalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_Detalles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGV_Detalles.Location = new System.Drawing.Point(0, 0);
+            this.DGV_Detalles.Name = "DGV_Detalles";
+            this.DGV_Detalles.ReadOnly = true;
+            this.DGV_Detalles.Size = new System.Drawing.Size(800, 139);
+            this.DGV_Detalles.TabIndex = 0;
             // 
             // Ver_ventas
             // 
@@ -243,14 +295,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainer1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Ver_ventas";
-            this.Text = "Form1";
+            this.Text = "Ver_ventas";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Facturas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Detalles)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -258,24 +318,22 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BBuscar;
         private System.Windows.Forms.RadioButton RBEspecificar;
         private System.Windows.Forms.RadioButton RBTodo;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker DTHasta;
+        private System.Windows.Forms.DateTimePicker DTDesde;
+        private System.Windows.Forms.TextBox TBCliente;
         private System.Windows.Forms.Label LFecha;
         private System.Windows.Forms.Label LCategoria;
         private System.Windows.Forms.Label L_Producto;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewLinkColumn Column6;
+        private System.Windows.Forms.Label LAdvertencia;
+        private System.Windows.Forms.ComboBox CBVendedores;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.DataGridView DGV_Facturas;
+        private System.Windows.Forms.DataGridView DGV_Detalles;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }

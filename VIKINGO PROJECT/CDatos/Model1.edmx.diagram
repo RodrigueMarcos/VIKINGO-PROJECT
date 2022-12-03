@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0c4ff66f059e4341806b0cb9135bba53" Name="Diagram1">
+        <EntityTypeShape EntityType="VIKINGOModel.Categoria" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="VIKINGOModel.Cliente" Width="1.5" PointX="6" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VIKINGOModel.Detalle" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VIKINGOModel.Estado" Width="1.5" PointX="1.5" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="VIKINGOModel.Factura" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VIKINGOModel.FormaPago" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VIKINGOModel.Genero" Width="1.5" PointX="1.5" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VIKINGOModel.Localidad" Width="1.5" PointX="1.5" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VIKINGOModel.Lote" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="VIKINGOModel.Marca" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="VIKINGOModel.Persona" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VIKINGOModel.prodDefectuoso" Width="1.5" PointX="5.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VIKINGOModel.Producto" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VIKINGOModel.Provincia" Width="1.5" PointX="1.5" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VIKINGOModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VIKINGOModel.Tipo_cliente" Width="1.5" PointX="3.75" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VIKINGOModel.Tipo_usuario" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VIKINGOModel.TipoFactura" Width="1.5" PointX="0.75" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VIKINGOModel.Usuario" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="VIKINGOModel.FK_Producto_Categoria" ManuallyRouted="false" />
+        <AssociationConnector Association="VIKINGOModel.FK_Cliente_Persona" ManuallyRouted="false" />
+        <AssociationConnector Association="VIKINGOModel.FK_Cliente_Tipo" ManuallyRouted="false" />
+        <AssociationConnector Association="VIKINGOModel.FK__Detalle__id_prod__5A846E65" ManuallyRouted="false" />
+        <AssociationConnector Association="VIKINGOModel.FK_Detalle_Factura" ManuallyRouted="false" />
+        <AssociationConnector Association="VIKINGOModel.FK_Persona_Estado" ManuallyRouted="false" />
+        <AssociationConnector Association="VIKINGOModel.FK_Factura_Forma" ManuallyRouted="false" />
+        <AssociationConnector Association="VIKINGOModel.FK_Factura_Tipo" ManuallyRouted="false" />
+        <AssociationConnector Association="VIKINGOModel.FK_Factura_Vendedor" ManuallyRouted="false" />
+        <AssociationConnector Association="VIKINGOModel.FK_Persona_Genero" ManuallyRouted="false" />
+        <AssociationConnector Association="VIKINGOModel.FK__Persona__id_loca__5E54FF49" ManuallyRouted="false" />
+        <AssociationConnector Association="VIKINGOModel.FK_Localidad_Provincia" ManuallyRouted="false" />
+        <AssociationConnector Association="VIKINGOModel.FK_Lote_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="VIKINGOModel.FK_Producto_Marca" ManuallyRouted="false" />
+        <AssociationConnector Association="VIKINGOModel.FK_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="VIKINGOModel.FK_Usuario_Persona" />
+        <AssociationConnector Association="VIKINGOModel.FK_Usuario_Tipo" />
+        <AssociationConnector Association="VIKINGOModel.FK_Factura_Cliente" />
+        <EntityTypeShape EntityType="VIKINGOModel.Motivo" Width="1.5" PointX="7.375" PointY="7.875" />
+        <AssociationConnector Association="VIKINGOModel.FK_Defectuoso_Motivo" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

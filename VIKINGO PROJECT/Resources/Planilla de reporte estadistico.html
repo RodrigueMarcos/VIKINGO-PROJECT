@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Planilla de reporte estadistico</title>
+    <style>
+        table.border {
+            border-collapse: collapse;
+        }
+
+            table.border th {
+                padding: 5px;
+                border: 1px solid black;
+            }
+
+            table.border td {
+                padding: 5px;
+                border: 1px solid black;
+            }
+    </style>
+</head>
+<body>
+    <table style="width:100%">
+        <tr >
+            <td style="width:20%"></td>
+            <td style="width:60%" align="center" valign="top">
+                <table style="width:100%">
+                    <tr style="background-color:#262676;"><td align="center"><h3 style="margin:40px;color:Tomato;">Reporte estadistico</h3></td></tr>
+                </table>
+            </td>
+            <td style="width:20%">
+                <table  style="width:100%" >
+                    <tr><td align="center" style="color:Black;">VIKINGO S.R.L.</td></tr>
+                    <tr><td align="center" style="color:Black;">CUIL: 20-123123123-0</td></tr>
+                    <tr><td align="center" style="color:black;">Fecha: @FECHAIMPRECION</td></tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr><td colspan="3" height="20"></td></tr>
+
+        <tr>
+            <td colspan="2">
+                <table style="width:120%">
+                    <tr align="center">
+                        <td  style=" width:20%">Reporte de ventas por periodo especifidado</td>   
+                    </tr>
+                    <tr><td colspan="3" height="30"></td></tr>
+                </table>
+                
+                <table style="width:120%">
+                    <tr align="center">
+                        <td style="width:20%">Fecha desde:</td>
+                        <td style="width:30%;border-bottom:1px solid black">@FECHADESDE</td>
+                        <td style="width:10%">Fecha hasta:</td>
+                        <td style="width:40%;border-bottom:1px solid black">@FECHAHASTA</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        
+        <tr><td colspan="3" height="30"></td></tr>
+
+        <tr height="70">
+            <td colspan="3" height="30">
+                
+                <table style="width:100%;" >
+                    <tr>
+                        <td style="width:16%">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <img src="finanzas(1).png" alt="Finanzas" />
+                                    </td>
+                                    <td>
+                                        <p>
+                                            @TOTALVENDIDO<br/>@NTOTAL
+                                        </p>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>
+                        <td style="width:16%">
+                            <table>
+                                <tr>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        <p>
+                                            @TITULOPRODUCTOS<br/>@NPRODUCTO
+                                        </p>  
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>
+
+                        <td style="width:16%">
+                            <table>
+                                <tr>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        <p>
+                                            @TITULOCATEGORIAS<br/>@NCATEGORIA
+                                        </p>
+                                    </td>
+                                </tr>
+
+                            </table>
+                            
+                        </td>
+                        <td style="width:17%">
+                            <table>
+                                <tr>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        <p>
+                                            @TITULOMARCAS<br/>@NMARCA
+                                        </p>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>    
+                        <td style="width:16%">
+                            <table>
+                                <tr>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        <p>
+                                            @TITULOVENTAS<br/>@NVENTA
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>                            
+                        </td>
+
+                        <td style="width:16%">
+                            <table>
+                                <tr>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        <p>
+                                            @TITULOCLIENTES<br/>@NCLIENTE
+                                        </p>
+                                    </td>
+                                </tr>
+
+                            </table>
+                            
+                        </td>
+
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+
+        <tr><td colspan="3" height="30"></td></tr>
+
+        <tr height="1"> <!--style="background-color:#d4da19;"-->
+            <td colspan="3">
+                <table border="color:black;" style="width:100%">
+                    <tr>
+                        <td style="width:50%" align="center">
+                            @ENCABEZADO
+                            
+                        </td>
+                        <td style="width:50%" align="center">
+                            @ENCABEZA3
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+       
+        <tr><td colspan="3" height="300"></td></tr>
+        <tr>
+            <td colspan="3" height="30">
+                <table style="width:100%">
+                    <tr >
+                        <td align="center">
+                            @LISTAENCABEZA2
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <table class="border" style="width:100%;">
+                    <thead>
+                        <tr style="background-color:#D8D8D8">
+                            <th>Código</th>
+                            <th>Nombre</th>
+                            <th>Descripcion</th>
+                            <th>Marca</th>
+                            <th>Cantidad Vendidas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--<tr>
+                            <td>1</td>
+                            <td>sdafsda</td>
+                            <td>2.4</td>
+                            <td>2.4</td>
+                        </tr>-->
+                        @FILAS
+                       
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

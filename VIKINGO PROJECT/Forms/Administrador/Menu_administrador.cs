@@ -3,38 +3,203 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VIKINGO_PROJECT.Forms.Administrador;
 using VIKINGO_PROJECT.Forms.Vendedor;
 
-namespace VIKINGO_PROJECT.Forms.Administrador
+namespace VIKINGO_PROJECT.Forms.Supervisor
 {
     public partial class Menu_administrador : Form
     {
-        public Menu_administrador()
+        private string apellido;
+        private string nombre;
+        public Menu_administrador(string p_apellido, string p_nombre)
         {
             InitializeComponent();
-            Ladvertencia_AU.Text = "";
+            LAdvertencia.Text = "";
+            apellido = p_apellido;
+            nombre = p_nombre;
+            LApeNom.Text = apellido + ", " + nombre;
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            abrir_form_nuevo_usuario();
+            agregar_producto();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           
+
+            if (verificar_form_abiertos()==false)
+            {
+                Agregar_lote ingreso = new Agregar_lote();
+                ingreso.TopLevel = false;
+                ingreso.Dock = DockStyle.Fill;
+                splitContainer2.Panel2.Controls.Add(ingreso);
+                ingreso.BringToFront();
+                ingreso.Show();
+            }
+            else
+            {
+                LAdvertencia.Text = "*HAY UNA VENTANA ABIERTA";
+                
+            }
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DialogResult ask = MessageBox.Show("¿Desea salir?", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (ask == DialogResult.Yes)
+            {
+                this.Close();
+                
+
+            }
+        }
+
+        private void BVencimiento_Click(object sender, EventArgs e)
+        {
+            ver_productos_a_vencer();
+        }
+
+        private void productoAVencerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (verificar_form_abiertos() == false)
+            {
+                Modificar_producto form = new Modificar_producto();
+                form.TopLevel = false;
+                form.Dock = DockStyle.Fill;
+                splitContainer2.Panel2.Controls.Add(form);
+                splitContainer2.Panel2.Tag = form;
+                form.BringToFront();
+                form.Show();
+            }
+            else
+            {
+                LAdvertencia.Text = "*HAY UNA VENTANA ABIERTA";
+            }
+        }
+
+        private void ver_productos_a_vencer()
+        {
             
+
+            if (verificar_form_abiertos()==false)
+            {
+                Listar_productos vencimientos = new Listar_productos();
+                vencimientos.TopLevel = false;
+                vencimientos.Dock = DockStyle.Fill;
+                splitContainer2.Panel2.Controls.Add(vencimientos);
+                splitContainer2.Panel2.Tag = vencimientos;
+                vencimientos.BringToFront();
+                vencimientos.Show();
+            }
+            else
+            {
+                LAdvertencia.Text = "*HAY UNA VENTANA ABIERTA!!!";
+                
+
+            }
         }
 
-        private void BCerrar_sesion_Click(object sender, EventArgs e)
+        private void modificarProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            agregar_producto();
         }
 
-        private void mostrarVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void agregar_producto()
         {
-            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Ver_ventas);
+            
 
-            if (frm == null)
+            if (verificar_form_abiertos()==false)
+            {
+                Agregar_producto producto = new Agregar_producto();
+                producto.TopLevel = false;
+                producto.Dock = DockStyle.Fill;
+                splitContainer2.Panel2.Controls.Add(producto);
+                producto.BringToFront();
+                producto.Show();
+            }
+            else
+            {
+                LAdvertencia.Text = "*HAY UNA VENTANA ABIERTA";
+                
+            }
+        }
+
+        private void productoDefectuosoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ver_productos_a_vencer();
+        }
+
+        private void productoDefectuosoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+           
+
+            if (verificar_form_abiertos()==false)
+            {
+                Producto_defectuoso producto = new Producto_defectuoso();
+                producto.TopLevel = false;
+                producto.Dock = DockStyle.Fill;
+                splitContainer2.Panel2.Controls.Add(producto);
+                producto.BringToFront();
+                producto.Show();
+            }
+            else
+            {
+                MessageBox.Show("*HAY UNA VENTANA ABIERTA", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+
+        }
+        
+
+        private bool verificar_form_abiertos()
+        {
+            Form frm1 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Producto_defectuoso);
+            Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Agregar_producto);
+            Form frm3 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Listar_productos);
+            Form frm4 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Agregar_lote);
+            Form frm5 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Ver_ventas);
+            Form frm6 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Estadistica);
+            Form frm7 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Modificar_producto);
+            Form frm8 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is ProductosFaltantes);
+            Form frm9 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is GestionarCliente);
+            if (frm1 == null && frm2 == null && frm3 == null && frm4 == null && frm5 == null && frm6 == null&&frm7==null&&frm8==null&&frm9==null)
+            {
+                LAdvertencia.Text = "";
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private void calculadoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void verVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (verificar_form_abiertos() == false)
             {
                 Ver_ventas ventas = new Ver_ventas();
                 ventas.TopLevel = false;
@@ -46,18 +211,15 @@ namespace VIKINGO_PROJECT.Forms.Administrador
             }
             else
             {
-                MessageBox.Show("Ya tiene un formulario abierto!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                LAdvertencia.Text = "*HAY UNA VENTANA ABIERTA";
             }
         }
 
         private void estadisticasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Estadisticas);
-
-            if (frm == null)
+            if (verificar_form_abiertos() == false)
             {
-                Estadisticas ventas = new Estadisticas();
+                Estadistica ventas = new Estadistica();
                 ventas.TopLevel = false;
                 ventas.Dock = DockStyle.Fill;
                 splitContainer2.Panel2.Controls.Add(ventas);
@@ -67,53 +229,51 @@ namespace VIKINGO_PROJECT.Forms.Administrador
             }
             else
             {
-                MessageBox.Show("Ya tiene un formulario abierto!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                LAdvertencia.Text = "*HAY UNA VENTANA ABIERTA";
             }
         }
 
-        private void tablaDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Ver_empleados);
+            System.Diagnostics.Process calc = new System.Diagnostics.Process { StartInfo = { FileName = @"calc.exe" } };
+            calc.Start();
+            calc.WaitForExit();
+        }
 
-            if (frm == null)
+        private void productosFaltantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+   
+            if (verificar_form_abiertos() == false)
             {
-                Ver_empleados empleados = new Ver_empleados();
-                empleados.TopLevel = false;
-                empleados.Dock = DockStyle.Fill;
-                splitContainer2.Panel2.Controls.Add(empleados);
-                splitContainer2.Panel2.Tag = empleados;
-                empleados.BringToFront();
-                empleados.Show();
+                ProductosFaltantes form = new ProductosFaltantes();
+                form.TopLevel = false;
+                form.Dock = DockStyle.Fill;
+                splitContainer2.Panel2.Controls.Add(form);
+                splitContainer2.Panel2.Tag = form;
+                form.BringToFront();
+                form.Show();
             }
             else
             {
-                MessageBox.Show("Ya esta abierto una ventana!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
+                LAdvertencia.Text = "*HAY UNA VENTANA ABIERTA";
             }
         }
 
-        private void agregarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BGestionarCli_Click(object sender, EventArgs e)
         {
-            abrir_form_nuevo_usuario();
-        }
-
-        private void abrir_form_nuevo_usuario()
-        {
-            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Agregar_usuario);
-            if (frm == null)
+            if (verificar_form_abiertos() == false)
             {
-                Agregar_usuario usuario = new Agregar_usuario();
-                usuario.TopLevel = false;
-                usuario.Dock = DockStyle.Fill;
-                splitContainer2.Panel2.Controls.Add(usuario);
-                usuario.BringToFront();
-                usuario.Show();
+                GestionarCliente form = new GestionarCliente();
+                form.TopLevel = false;
+                form.Dock = DockStyle.Fill;
+                splitContainer2.Panel2.Controls.Add(form);
+                splitContainer2.Panel2.Tag = form;
+                form.BringToFront();
+                form.Show();
             }
             else
             {
-                Ladvertencia_AU.Text = "*La ventana esta abierta";
-                Ladvertencia_AU.ForeColor = Color.Red;
+                LAdvertencia.Text = "*HAY UNA VENTANA ABIERTA";
             }
         }
     }
